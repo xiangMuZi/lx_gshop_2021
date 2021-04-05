@@ -13,11 +13,18 @@
 <script>
   /*引入FooterGuide组件*/
   import FooterGuide from './components/FooterGuide/FooterGuide'
-export default {
+  import {reqCategorys} from './api'
+
+  export default {
     /*2、定义为组件标签*/
-  components:{
-    FooterGuide
-  }
+    components:{
+      FooterGuide
+    },
+    //测试异步获取数据
+    async mounted(){
+      const result = await reqCategorys();
+      console.log(result);
+    }
 }
 </script>
 
